@@ -1,0 +1,48 @@
+
+class Pessoa(val nome: String, var idade: Int) {
+    fun saudacao(): String {
+        return "Olá, meu nome é $nome e eu tenho $idade anos."
+    }
+
+    fun podeVotar(): Boolean {
+        return idade >= 16
+    }
+}
+
+fun main() {
+    // Variáveis com val e var
+    val nome: String = "mariana"
+    var idade: Int = 17 
+    var maiorDeIdade: Boolean = false
+
+    
+    val pessoa = Pessoa(nome, idade)
+
+    // mostrando a saudação
+    println(pessoa.saudacao())
+
+    // Estrutura if
+    if (idade >= 18) {
+        println("Maior de idade")
+        maiorDeIdade = true
+    } else {
+        println("Menor de idade")
+    }
+
+    // Estrutura for
+    val limiteContagem: Int = 10
+    for (i in 1..limiteContagem) {
+        println(i)
+    }
+
+    // Modificando a variável var
+    idade = 20 
+    println("Nova idade: $idade")
+
+    // Verificando se pode ou não votar
+    if (pessoa.podeVotar()) {
+        println("$nome pode votar!")
+    } else {
+        println("$nome não pode votar.")
+    }
+}
